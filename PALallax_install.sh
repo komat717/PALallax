@@ -7,6 +7,7 @@ echo "**********************"
 echo `date`
 
 # Version definition
+# Git test
 
 elasticsearch_version="elasticsearch-2.4.6"
 java_version="java-1.8.0"
