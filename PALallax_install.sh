@@ -7,7 +7,6 @@ echo "**********************"
 echo `date`
 
 # Version definition
-# Git test
 
 elasticsearch_version="elasticsearch-2.4.6"
 java_version="java-1.8.0"
@@ -17,7 +16,7 @@ gem_elastic_version="1.11.0"
 gem_polling_version="0.1.5"
 gem_snmp_version="1.2.0"
 gem_fluent_snmp_version="0.0.9"
-kibana_version="kibana-4.6.6"
+kibana_version="kibana-5.4"
 nginx_version="nginx-1.10.1"
 
 # Preparation
@@ -69,12 +68,13 @@ yum -y install $java_version
 echo "====kibana===="
 
 cat <<EOF> /etc/yum.repos.d/kibana.repo
-[kibana-4.6]
-name=Kibana repository for 4.6.x packages
-baseurl=http://packages.elastic.co/kibana/4.6/centos
+[kibana-5.3]
+name=Kibana repository for 5.4 packages
+baseurl=https://artifacts.elastic.co/packages/5.4/yum
 gpgcheck=1
-gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
+autorefresh=1
 EOF
 
 yum -y install $kibana_version
