@@ -68,7 +68,7 @@ yum -y install $java_version
 echo "====kibana===="
 
 cat <<EOF> /etc/yum.repos.d/kibana.repo
-[kibana-5.3]
+[kibana-5.4]
 name=Kibana repository for 5.4 packages
 baseurl=https://artifacts.elastic.co/packages/5.4/yum
 gpgcheck=1
