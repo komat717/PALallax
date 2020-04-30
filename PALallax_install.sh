@@ -70,9 +70,9 @@ echo "====kibana===="
 cat <<EOF> /etc/yum.repos.d/kibana.repo
 [kibana-5.4]
 name=Kibana repository for 5.4 packages
-baseurl=https://artifacts.elastic.co/packages/5.4/yum
+baseurl=http://packages.elastic.co/kibana/5.4/centos 
 gpgcheck=1
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
 EOF
