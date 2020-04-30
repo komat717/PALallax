@@ -68,13 +68,14 @@ yum -y install $java_version
 echo "====kibana===="
 
 cat <<EOF> /etc/yum.repos.d/kibana.repo
-[kibana-7.X]
-name=Kibana repository for 7.X packages
-baseurl=http://artifacts.elastic.co/kibana/7.X/centos 
+[kibana-7.x]
+name=Kibana repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
-gpgkey=https://artifactss.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
+type=rpm-md
 EOF
 
 yum -y install $kibana_version
