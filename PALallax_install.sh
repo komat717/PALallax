@@ -16,7 +16,7 @@ gem_elastic_version="1.11.0"
 gem_polling_version="0.1.5"
 gem_snmp_version="1.2.0"
 gem_fluent_snmp_version="0.0.9"
-kibana_version="kibana-5.4"
+kibana_version="kibana-7.6.2"
 nginx_version="nginx-1.10.1"
 
 # Preparation
@@ -68,9 +68,9 @@ yum -y install $java_version
 echo "====kibana===="
 
 cat <<EOF> /etc/yum.repos.d/kibana.repo
-[kibana-5.4]
-name=Kibana repository for 5.4 packages
-baseurl=http://packages.elastic.co/kibana/5.4/centos 
+[kibana-7.X]
+name=Kibana repository for 7.X packages
+baseurl=http://packages.elastic.co/kibana/7.X/centos 
 gpgcheck=1
 gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1
