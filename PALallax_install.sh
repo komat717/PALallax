@@ -134,7 +134,7 @@ module_hotfixes=true
 EOF
 
 yum install -y yum-utils
-yum install -y --enablerepo=nginx $nginx_version
+yum install -y $nginx_version
 yum install -y httpd-tools
 
 ## Setting file copy
