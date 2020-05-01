@@ -11,13 +11,13 @@ echo `date`
 elasticsearch_version="elasticsearch-2.4.6"
 java_version="java-1.8.0"
 curator_version="3.5.1"
-fluentd_version="td-agent-2.3.1"
+fluentd_version="td-agent-3.5.1"
 gem_elastic_version="1.11.0"
 gem_polling_version="0.1.5"
 gem_snmp_version="1.2.0"
 gem_fluent_snmp_version="0.0.9"
 kibana_version="kibana-7.6.2"
-nginx_version="nginx-1.10.1"
+nginx_version="nginx-1.16.1"
 
 # Preparation
 
@@ -89,7 +89,7 @@ echo "====Fluentd===="
 cat <<EOF> /etc/yum.repos.d/td.repo
 [treasuredata]
 name=TreasureData
-baseurl=http://packages.treasuredata.com/2/redhat/\$releasever/\$basearch
+baseurl=http://packages.treasuredata.com/3/redhat/\$releasever/\$basearch
 gpgcheck=0
 gpgkey=https://packages.treasuredata.com/GPG-KEY-td-agent
 EOF
@@ -118,7 +118,7 @@ echo "====nginx===="
 cat <<EOF> /etc/yum.repos.d/nginx.repo
 [nginx]
 name=nginx repo
-baseurl=http://nginx.org/packages/centos/7/x86_64/
+baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch
 gpgcheck=0
 enabled=1
 EOF
