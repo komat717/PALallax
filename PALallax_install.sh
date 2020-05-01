@@ -17,7 +17,7 @@ gem_polling_version="0.1.5"
 gem_snmp_version="1.2.0"
 gem_fluent_snmp_version="0.0.9"
 kibana_version="kibana-7.6.2"
-nginx_version="nginx-1.16.1"
+nginx_version="nginx-1.18.0"
 
 # Preparation
 
@@ -116,13 +116,24 @@ pip install elasticsearch-curator==$curator_version
 echo "====nginx===="
 
 cat <<EOF> /etc/yum.repos.d/nginx.repo
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/\$releasever/\$basearch
-gpgcheck=0
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
 enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
 EOF
 
+yum install -y yum-utils
 yum install -y --enablerepo=nginx $nginx_version
 yum install -y httpd-tools
 
